@@ -18,7 +18,7 @@ describe('Funcionalidade: Login', () => {
 
     it('Deve fazer o login com sucesso usando importação de dados', () => {
         cy.login(usuarios[2].email, usuarios[2].senha)
-        cy.get('[data-test="login-submit"]').click()
+        
 
         cy.get('[data-test="dashboard-welcome"]').should('have.text',  ` Bem-vindo ${usuarios[2].nome}`)  
     });

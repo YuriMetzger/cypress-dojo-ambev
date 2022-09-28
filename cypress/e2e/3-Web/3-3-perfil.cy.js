@@ -9,7 +9,6 @@ describe('Funcionalidade: Criar perfil', () => {
     });
     it('Deve criar perfil com sucesso', () => {
         cy.get('#mui-component-select-status').click()
-        //cy.get('.MuiList-root').contains('Especialista em QA').click()
         cy.get('.MuiList-root').find('[data-value="Especialista em QA"]').click()
 
         cy.get('[data-test="profile-company"] > .MuiInputBase-root > .MuiInputBase-input').type('Via')
@@ -18,8 +17,6 @@ describe('Funcionalidade: Criar perfil', () => {
         cy.get('[data-test="profile-skills"] > .MuiInputBase-root > .MuiInputBase-input').type('jScript, Powershell e JS')
         cy.get('[data-test="profile-gitHub"] > .MuiInputBase-root > .MuiInputBase-input').type('yurimetzger')
         cy.get('[data-test="profile-bio"] > .MuiInputBase-root').type('bio')
-        //cy.get('[data-test="profile-socials"]')
-
         cy.get('[data-test="profile-submit"]').click()
         //cy.get('[data-test="profile-dashboard"]')
         cy.get('[data-test="dashboard-deleteProfile"]').should('exist')
