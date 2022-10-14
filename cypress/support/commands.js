@@ -44,3 +44,16 @@ Cypress.Commands.add('cadastrarPerfil', (cargo,empresa,site,local,skills,github,
     //cy.get('[data-test="profile-dashboard"]')
     
 })
+Cypress.Commands.add(('gerarToken'),(email,senha)=>{
+    cy.request({
+        method: 'POST',
+        url: '/api/auth',
+        body: {
+            "email": email,
+            "password": senha
+        }
+    }).then((response)=>{
+        expect(response.status).to.be.equal(200)
+        return (response.body.jwt)
+    })
+})
